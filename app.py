@@ -35,8 +35,24 @@ def callback():
 def handle_message(event):
     message = TextSendMessage(text=event.message.text)
     line_bot_api.reply_message(event.reply_token, message)
+	
+def reply_to_line(reply_text)
+    # 取得 reply token
+    reply_token = params['events'][0]['replyToken']
+    
+    # 設定回覆訊息
+    message = {
+		"type": "sticker",
+		"packageId": "1",
+		"stickerId": "1"
+    } 
+
+    # 傳送訊息
+    line.reply_message(reply_token, message)
+  end
 
 import os
 if __name__ == "__main__":
     port = int(os.environ.get('PORT', 5000))
     app.run(host='0.0.0.0', port=port)
+
